@@ -1,0 +1,16 @@
+[Unit]
+Description=NaviServer
+After=network.target
+
+[Service]
+WorkingDirectory=/var/lib/naviserver
+ExecStart=/var/lib/naviserver/bin/nsd -f -t /var/lib/naviserver/conf/nsd-config.tcl
+Restart=always
+# Restart service after 10 seconds if Wub service crashes
+RestartSec=10
+User=nsadmin
+Group=nsadmin
+SyslogIdentifier=naviserver
+
+[Install]
+WantedBy=multi-user.target
