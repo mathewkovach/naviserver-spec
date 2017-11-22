@@ -66,7 +66,9 @@ install -D -m 644 %{S:2} %{buildroot}%{_unitdir}/naviserver.service
 rm -rf %buildroot
 
 %pre -n naviserver
-useradd -d/var/lib/naviserver -U -M -s/bin/bash nsadmin
+if ! id -u nsadmin > /dev/null 2>&1; then
+    useradd -d/var/lib/naviserver -U -M -s/bin/bash nsadmin
+fi
 %service_add_pre naviserver.service
 
 %post -n naviserver
