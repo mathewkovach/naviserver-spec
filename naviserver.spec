@@ -10,6 +10,7 @@ License:        MPL-1.1
 Group:          Productivity/Networking/Web/Servers
 Url:            http://bitbucket.org/naviserver/
 BuildRequires:  systemd-rpm-macros
+BuildRequires:  shadow
 BuildRequires:  tcl-devel
 BuildRequires:  zlib-devel
 BuildRequires:  openssl-devel
