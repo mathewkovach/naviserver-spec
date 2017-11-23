@@ -58,7 +58,6 @@ make %{?_smp_mflags}
 
 %install
 make DESTDIR=%buildroot install
-mkdir -p %buildroot/var/log/ns
 install -D -m 644 %{S:1} %{buildroot}/etc/ld.so.conf.d/naviserver_lib.conf
 install -D -m 644 %{S:2} %{buildroot}%{_unitdir}/naviserver.service
 
@@ -89,7 +88,6 @@ fi
 %defattr(-,nsadmin,nsadmin,-)
 %docdir %pkgprefix/pages/*
 %pkgprefix
-/var/log/ns
 %exclude %pkgprefix/include
 
 %files devel
