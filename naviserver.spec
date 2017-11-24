@@ -88,6 +88,7 @@ fi
 %defattr(-,nsadmin,nsadmin,-)
 %docdir %pkgprefix/pages/*
 %pkgprefix
+%config(noreplace) %pkgprefix/conf/*
 %exclude %pkgprefix/include
 
 %files devel
